@@ -201,16 +201,60 @@ python phase2_ai_prefilter_multithreaded.py  # 6 倍速 (GPU 加速)
 
 ## 🎨 運作原理
 
+<div align="center">
+
 ```mermaid
-graph LR
-    A[🔍 搜尋主題] --> B[📥 下載貼文]
-    B --> C[💾 本地儲存]
-    C --> D{🤖 AI 分類?}
-    D -->|是| E[✅ 高度相關]
-    D -->|是| F[⚠️ 不確定]
-    D -->|是| G[❌ 不相關]
-    D -->|否| H[📁 原始檔案]
+%%{init: {'theme':'base', 'themeVariables': { 'primaryColor':'#e3f2fd','primaryTextColor':'#0d47a1','primaryBorderColor':'#1976d2','lineColor':'#42a5f5','secondaryColor':'#fff3e0','tertiaryColor':'#f3e5f5','noteBkgColor':'#e8f5e9','noteTextColor':'#1b5e20'}}}%%
+graph TB
+    Start(["🎬 開始您的收藏之旅"])
+    Search["🔍 搜尋主題<br/><small>朱迪、阿力等角色</small>"]
+    Download["📥 下載貼文<br/><small>文字 + 圖片 + 影片</small>"]
+    Save["💾 本地儲存<br/><small>JSONL 格式</small>"]
+    AIDecision{"🤖 啟用 AI 分類？<br/><small>選用但建議開啟</small>"}
+    
+    AIProcess["⚡ AI 智慧分析<br/><small>語境理解處理</small>"]
+    
+    Relevant["✅ 高度相關<br/><small>符合您的興趣</small>"]
+    Uncertain["⚠️ 不確定<br/><small>需要人工確認</small>"]
+    NotRelevant["❌ 不相關<br/><small>相關性分數低</small>"]
+    RawArchive["📁 原始檔案<br/><small>所有貼文未分類</small>"]
+    
+    End(["🎉 收藏完成！"])
+    
+    Start ==> Search
+    Search ==> Download
+    Download ==> Save
+    Save ==> AIDecision
+    
+    AIDecision -->|"是 👍"| AIProcess
+    AIDecision -->|"否 👎"| RawArchive
+    
+    AIProcess ==> Relevant
+    AIProcess ==> Uncertain
+    AIProcess ==> NotRelevant
+    
+    Relevant ==> End
+    Uncertain ==> End
+    NotRelevant ==> End
+    RawArchive ==> End
+    
+    style Start fill:#e1f5ff,stroke:#01579b,stroke-width:3px,color:#01579b
+    style Search fill:#e8f5e9,stroke:#2e7d32,stroke-width:2px,color:#1b5e20
+    style Download fill:#fff3e0,stroke:#e65100,stroke-width:2px,color:#e65100
+    style Save fill:#f3e5f5,stroke:#6a1b9a,stroke-width:2px,color:#4a148c
+    style AIDecision fill:#fff9c4,stroke:#f57f17,stroke-width:3px,color:#f57f17
+    style AIProcess fill:#e0f2f1,stroke:#00695c,stroke-width:2px,color:#004d40
+    style Relevant fill:#c8e6c9,stroke:#388e3c,stroke-width:3px,color:#1b5e20
+    style Uncertain fill:#ffe0b2,stroke:#ef6c00,stroke-width:2px,color:#e65100
+    style NotRelevant fill:#ffcdd2,stroke:#c62828,stroke-width:2px,color:#b71c1c
+    style RawArchive fill:#e1bee7,stroke:#7b1fa2,stroke-width:2px,color:#4a148c
+    style End fill:#b2ebf2,stroke:#006064,stroke-width:3px,color:#006064
+    
+    classDef processNode fill:#e3f2fd,stroke:#1976d2,stroke-width:2px,color:#0d47a1
+    classDef resultNode fill:#f1f8e9,stroke:#689f38,stroke-width:2px,color:#33691e
 ```
+
+</div>
 
 ### 兩階段工作流
 

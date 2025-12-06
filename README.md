@@ -201,16 +201,60 @@ python phase2_ai_prefilter_multithreaded.py  # 6x faster (GPU)
 
 ## 🎨 How It Works
 
+<div align="center">
+
 ```mermaid
-graph LR
-    A[🔍 Search Topics] --> B[📥 Download Posts]
-    B --> C[💾 Save Locally]
-    C --> D{🤖 AI Sort?}
-    D -->|Yes| E[✅ Relevant]
-    D -->|Yes| F[⚠️ Uncertain]
-    D -->|Yes| G[❌ Not Relevant]
-    D -->|No| H[📁 Raw Archive]
+%%{init: {'theme':'base', 'themeVariables': { 'primaryColor':'#e3f2fd','primaryTextColor':'#0d47a1','primaryBorderColor':'#1976d2','lineColor':'#42a5f5','secondaryColor':'#fff3e0','tertiaryColor':'#f3e5f5','noteBkgColor':'#e8f5e9','noteTextColor':'#1b5e20'}}}%%
+graph TB
+    Start(["🎬 Start Your Collection Journey"])
+    Search["🔍 Search Topics<br/><small>Judy Hopps, Nick Wilde, etc.</small>"]
+    Download["📥 Download Posts<br/><small>Text + Images + Videos</small>"]
+    Save["💾 Save Locally<br/><small>JSONL Format</small>"]
+    AIDecision{"🤖 Enable AI Sorting?<br/><small>Optional but Recommended</small>"}
+    
+    AIProcess["⚡ AI Analysis<br/><small>Context Understanding</small>"]
+    
+    Relevant["✅ Highly Relevant<br/><small>Matches Your Interest</small>"]
+    Uncertain["⚠️ Uncertain<br/><small>Needs Review</small>"]
+    NotRelevant["❌ Not Relevant<br/><small>Low Match Score</small>"]
+    RawArchive["📁 Raw Archive<br/><small>All Posts Unsorted</small>"]
+    
+    End(["🎉 Collection Complete!"])
+    
+    Start ==> Search
+    Search ==> Download
+    Download ==> Save
+    Save ==> AIDecision
+    
+    AIDecision -->|"Yes 👍"| AIProcess
+    AIDecision -->|"No 👎"| RawArchive
+    
+    AIProcess ==> Relevant
+    AIProcess ==> Uncertain
+    AIProcess ==> NotRelevant
+    
+    Relevant ==> End
+    Uncertain ==> End
+    NotRelevant ==> End
+    RawArchive ==> End
+    
+    style Start fill:#e1f5ff,stroke:#01579b,stroke-width:3px,color:#01579b
+    style Search fill:#e8f5e9,stroke:#2e7d32,stroke-width:2px,color:#1b5e20
+    style Download fill:#fff3e0,stroke:#e65100,stroke-width:2px,color:#e65100
+    style Save fill:#f3e5f5,stroke:#6a1b9a,stroke-width:2px,color:#4a148c
+    style AIDecision fill:#fff9c4,stroke:#f57f17,stroke-width:3px,color:#f57f17
+    style AIProcess fill:#e0f2f1,stroke:#00695c,stroke-width:2px,color:#004d40
+    style Relevant fill:#c8e6c9,stroke:#388e3c,stroke-width:3px,color:#1b5e20
+    style Uncertain fill:#ffe0b2,stroke:#ef6c00,stroke-width:2px,color:#e65100
+    style NotRelevant fill:#ffcdd2,stroke:#c62828,stroke-width:2px,color:#b71c1c
+    style RawArchive fill:#e1bee7,stroke:#7b1fa2,stroke-width:2px,color:#4a148c
+    style End fill:#b2ebf2,stroke:#006064,stroke-width:3px,color:#006064
+    
+    classDef processNode fill:#e3f2fd,stroke:#1976d2,stroke-width:2px,color:#0d47a1
+    classDef resultNode fill:#f1f8e9,stroke:#689f38,stroke-width:2px,color:#33691e
 ```
+
+</div>
 
 ### Two-Phase Workflow
 
