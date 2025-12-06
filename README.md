@@ -11,7 +11,7 @@
 ║                                                                  ║
 ║                    ─── Disney · Zootopia ───                     ║
 ║                                                                  ║
-║        ✦       ✧       ❋       ❋       ✧       ✦              ║
+║         ✦       ✧       ❋       ❋       ✧       ✦             ║
 ║                                                                  ║
 ║                Collect  •  Archive  •  Organize                  ║
 ║                 Your Passion, Preserved Forever                  ║
