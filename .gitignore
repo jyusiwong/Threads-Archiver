@@ -1,0 +1,9 @@
+# folders
+_*/
+Interested_Event_Archive/
+thread_sessions/
+
+# files
+_*
+README*
+github.code-workspace
