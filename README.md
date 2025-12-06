@@ -4,7 +4,9 @@
 <!-- 🎄 CHRISTMAS ZOOTOPIA BANNER 2025 ❄️ -->
 <!-- ═══════════════════════════════════════════════════════════════════ -->
 
-<img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=12,14,18,20,24&height=200&section=header&text=🎄%20Threads%20Content%20Collector%20❄️&fontSize=45&fontColor=fff&animation=twinkling&fontAlignY=35&desc=Your%20Personal%20Disney%20%26%20Zootopia%20Archive%20✨&descSize=20&descAlignY=55"/>
+<img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=12,14,18,20,24&height=200&section=header&text=Threads%20Content%20Collector&fontSize=45&fontColor=fff&animation=twinkling&fontAlignY=40"/>
+
+<h3 align="center">🎄 ❄️ Your Personal Disney & Zootopia Archive ✨ 🎁</h3>
 
 <table>
 <tr>

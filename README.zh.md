@@ -4,7 +4,9 @@
 <!-- 🎄 聖誕節動物方城市橫幅 2025 ❄️ -->
 <!-- ═══════════════════════════════════════════════════════════════════ -->
 
-<img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=12,14,18,20,24&height=200&section=header&text=🎄%20Threads%20內容收藏家%20❄️&fontSize=45&fontColor=fff&animation=twinkling&fontAlignY=35&desc=您的專屬迪士尼與優獸大都會檔案館%20✨&descSize=20&descAlignY=55"/>
+<img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=12,14,18,20,24&height=200&section=header&text=Threads%20Content%20Collector&fontSize=45&fontColor=fff&animation=twinkling&fontAlignY=40"/>
+
+<h3 align="center">🎄 ❄️ 您的專屬迪士尼與優獸大都會檔案館 ✨ 🎁</h3>
 
 <table>
 <tr>
